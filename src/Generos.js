@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Generos = () => {
   const [data, setData] = useState([])
@@ -23,9 +24,9 @@ const Generos = () => {
   if(data.length === 0) {
     return(
       <div className='container'>
-        <h1>Generos</h1>
-        <div class="alert alert-warning" role='alert'>
-          Você não possui generos criados.  
+        <h1>Gêneros</h1>
+        <div className='alert alert-warning' role='alert'>
+          Você não possui gêneros criados.  
         </div>  
       </div>
     )
@@ -33,7 +34,8 @@ const Generos = () => {
 
   return (
     <div  className='container'>
-      <h1>Generos</h1>
+      <h1>Gêneros</h1>
+      <Link to='generos/novo'>Novo gênero</Link>
       <table className='table table-dark'>
         <thead>
           <tr>
